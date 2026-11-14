@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   verify:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - uses: astral-sh/setup-uv@bec219d24cd3e171d82865faccec33120bb574f4 # v10.1.0
@@ -30,3 +30,9 @@ jobs:
         run: docker build -t saint-tibo-backend:ci backend
       - if: always()
         run: docker compose down -v
+
+  merge-stops:
+    if: github.event_name == 'pull_request'
+    uses: NDDev-Technocracy-OpenNetwork/nddev-ci/.github/workflows/merge-stops.yml@18cc86d2679f0fce863dc7752c1cb2117606ca01 # v0.6.52
+    permissions:
+      contents: read
