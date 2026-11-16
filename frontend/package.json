@@ -27,7 +27,6 @@
     "generate": "bun run scripts/generate-i18n.ts && tsr generate",
     "seed": "bun run scripts/seed.ts",
     "seed:dev": "bun run scripts/seed-dev.ts",
-    "pretypecheck": "bun run generate",
     "auth:db:generate": "bun --env-file=../.env run --bun drizzle-kit generate --config drizzle.auth.config.ts",
     "auth:db:migrate": "bun --env-file=../.env run --bun drizzle-kit migrate --config drizzle.auth.config.ts",
     "api:generate": "bun install --cwd ../tools/api-client --frozen-lockfile --ignore-scripts && bun run --cwd ../tools/api-client generate",
@@ -39,7 +38,6 @@
     "admin:grant": "bun run scripts/seed.ts grant",
     "token": "bun run scripts/token.ts",
     "start": "bun run server.ts",
-    "precheck": "bun run generate",
     "prefix": "bun run generate"
   },
   "dependencies": {

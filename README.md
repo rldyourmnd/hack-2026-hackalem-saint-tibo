@@ -286,6 +286,16 @@ Git push сам по себе его не запускает. Сборка и ф
 Приоритет развития: точность поручений и языков → надёжность захвата и
 подключения к встречам → развёртывание в контуре заказчика и интеграция с СЭД.
 
+## Source and CI commands
+
+`just setup` prepares frozen dependencies and source metadata without starting
+PostgreSQL. `just check` reads those prepared inputs; `just test` and `just build`
+retain the existing suites and package build. The complete `just verify` is a
+fresh-job CI entry point: it owns a unique Compose namespace, runs every original
+unit/build/integration/API-generation/container stage and removes only that
+fixture on success or failure. It refuses an existing runtime environment.
+Model preparation, cloud probes and deployment are separate operations.
+
 ## Навигация по проекту
 
 | Путь | Содержание |
