@@ -3,8 +3,8 @@ FROM python:3.15.2-slim-bookworm@sha256:96599df822d0e1c6bb700014a05c7f3c8cabc6e0
 FROM python-base AS builder
 COPY --from=ghcr.io/astral-sh/uv:0.13.9@sha256:d3b601f0c7b118bc1753febf7c41cc80981df678445e0254284eecf84db79a7d /uv /uvx /bin/
 ENV UV_COMPILE_BYTECODE=1 UV_LINK_MODE=copy UV_PYTHON_DOWNLOADS=never
-# The locked httptools source distribution needs a C compiler.
-RUN apt-get update && apt-get install -y --no-install-recommends gcc libc6-dev \
+# The locked httptools and uvloop source distributions need native build tools.
+RUN apt-get update && apt-get install -y --no-install-recommends gcc libc6-dev make \
     && rm -rf /var/lib/apt/lists/*
 WORKDIR /app
 COPY pyproject.toml uv.lock ./
