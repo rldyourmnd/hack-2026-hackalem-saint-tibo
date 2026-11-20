@@ -1035,9 +1035,8 @@ export function ReviewPanel({
                         if (next)
                           editDraft((current) => ({
                             ...current,
-                            action_items: current.action_items.map(
-                              (entry, i) =>
-                                i === index ? { ...entry, status: next } : entry
+                            action_items: current.action_items.map((entry, i) =>
+                              i === index ? { ...entry, status: next } : entry
                             ),
                           }));
                       }}
