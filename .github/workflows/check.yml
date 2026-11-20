@@ -18,9 +18,9 @@ jobs:
     with:
       recipe: ci-source
       fetch-depth: 0
-      python-version: "3.13.18"
-      bun-version: "1.4.2"
-      uv-version: "0.12.13"
+      python-version: "3.15.2"
+      bun-version: "1.4.4"
+      uv-version: "0.13.9"
       timeout-minutes: 45
 
   merge-stops:
