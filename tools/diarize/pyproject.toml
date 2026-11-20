@@ -6,7 +6,7 @@ dependencies = [
     "numpy==2.5.3",
     "sherpa-onnx==1.13.8",
     # Upstream wheel metadata requires core; pin explicitly for uv's sdist resolution.
-    "sherpa-onnx-core==1.13.8",
+    "sherpa-onnx-core==2.0.1",
 ]
 
 [tool.uv]
