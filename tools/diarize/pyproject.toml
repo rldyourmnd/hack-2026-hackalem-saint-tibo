@@ -4,9 +4,9 @@ version = "0.1.0"
 requires-python = ">=3.15,<3.16"
 dependencies = [
     "numpy==2.5.5",
-    "sherpa-onnx==2.0.1",
+    "sherpa-onnx==2.0.2",
     # Upstream wheel metadata requires core; pin explicitly for uv's sdist resolution.
-    "sherpa-onnx-core==2.0.1",
+    "sherpa-onnx-core==2.0.2",
 ]
 
 [tool.uv]
